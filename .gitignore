@@ -1,0 +1,9 @@
+elpa/
+games/
+straight/
+transient/
+.last-package-update-day
+.org-id-locations
+auto-save-list
+org-roam.db
+recentf
