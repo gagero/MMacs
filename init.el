@@ -192,7 +192,12 @@
 
 ;; Use spaces for indentation
 (setq-default indent-tabs-mode nil
-	      tab-width 2)
+	            tab-width 2)
+
+;; Keep code always indented
+(use-package aggressive-indent
+  :straight t)
+(global-aggressive-indent-mode)
 
 ;; Indentation alignment guides
 (use-package indent-guide
@@ -200,8 +205,8 @@
   :ensure t
   :config
   (setq indent-guide-delay 0
-	indent-guide-char "|"
-	indent-guide-recursive nil))
+	      indent-guide-char "|"
+	      indent-guide-recursive nil))
 (add-hook 'prog-mode-hook 'indent-guide-mode)
 ;; ------------------------------------
 
