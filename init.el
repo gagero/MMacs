@@ -238,6 +238,13 @@
 (show-paren-mode 1)
 ;; ------------------------------------
 
+;; ------------------------------------
+;; Highlight numbers
+;; -----------------
+(use-package highlight-numbers
+  :straight t)
+(add-hook 'prog-mode-hook 'highlight-numbers-mode)
+;; ------------------------------------
 
 
 
