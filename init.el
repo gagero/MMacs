@@ -146,6 +146,22 @@
 ;;; EDITOR
 ;; ------------------------------------------------------------------------
 
+;; ------------------------------------
+;; Disable mouse-centric UI elements
+;; ---------------------------------
+;; Emacs has a bunch of unneccessary (for me) stuff
+;; in the UI by default. It's "mouse-centric" and
+;; takes up spece for no benefit to me.
+(scroll-bar-mode -1)
+(tool-bar-mode -1)
+(tooltip-mode -1)
+(menu-bar-mode -1)
+(set-fringe-mode -1)
+(setq use-dialog-box nil)
+(setq inhibit-startup-message t
+      initial-scratch-message "")
+;; ------------------------------------
+
 
 
 
