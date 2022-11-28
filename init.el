@@ -268,6 +268,24 @@
 ;;; SEARCH & COMPLETION
 ;; ------------------------------------------------------------------------
 
+;; ------------------------------------
+;; Minibuffer completion
+;; ---------------------
+;; Vertico for minibuffer completion
+(use-package vertico
+  :straight t
+  :config
+  (setq vertico-count 5
+        vertico-cycle t))
+(vertico-mode)
+
+(use-package orderless
+  :straight t
+  :config (setq completion-styles '(orderless basic)
+                completion-category-defaults nil
+                completion-category-overrides '((file (styles partial-completion)))))
+;; ------------------------------------
+
 
 
 
