@@ -52,14 +52,18 @@
 ;; ------------------------------------
 
 ;; ------------------------------------
-;; Remove ugly UI elements
-;; -----------------------
+;; UI Adjustments
+;; --------------
 ;; Removing these UI elements before the
 ;; GUI loads prevents a bit of stuttering
-
 (push '(menu-bar-lines . 0) default-frame-alist)
 (push '(tool-bar-lines . 0) default-frame-alist)
 (push '(vertical-scroll-bars) default-frame-alist)
+
+;; On startup, Emacs flashes white until
+;; the theme is applied. Set BG/FG color
+;; here to fix this issue.
+(set-face-attribute 'default nil :background "#333333" :foreground "#f5f5f5" :height 120)
 ;; ------------------------------------
 
 ;; ------------------------------------
