@@ -179,6 +179,13 @@
       delete-old-versions t)
 ;; ------------------------------------
 
+;; ------------------------------------
+;; Dired
+;; -----
+;; Stop dired from creating so many buffers
+(put 'dired-find-alternate-file 'disabled nil)
+;; ------------------------------------
+
 
 
 
