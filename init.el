@@ -17,7 +17,7 @@
 ;; EXWM
 ;; EDITOR
 ;; SEARCH & COMPLETION
-;; PROJECT MANAGEMENT
+;; FILE & PROJECT MANAGEMENT
 ;; SYSTEM ADMINISTRATION
 ;; PROGRAMMING
 ;; PKMS
@@ -157,8 +157,27 @@
 
 
 ;; ------------------------------------------------------------------------
-;;; PROJECT MANAGEMENT
+;;; FILE & PROJECT MANAGEMENT
 ;; ------------------------------------------------------------------------
+
+;; ------------------------------------
+;; Disable backups, auto-saves, & lockfiles
+;; ----------------------------------------
+;; Stop saving #FILE# and FILE~, in the
+;; name of all things holy.
+(setq make-backup-file nil
+      backup-inhibited t
+      auto-save-default nil)
+
+;; Disable lockfiles
+(setq create-lockfiles nil)
+
+;; Emacs still wants to create the FILE~ backups,
+;; so this will put them in their own folder.
+(setq backup-directory-alist '(("." . "~/.emacs.trash"))
+      backup-by-copying t
+      delete-old-versions t)
+;; ------------------------------------
 
 
 
