@@ -104,9 +104,7 @@
 ;; ------------------------------------
 ;; GARBAGE COLLECTION
 ;; ------------------
-(use-package gcmh;; ------------------------------------------------------------------------
-;;;
-;; ------------------------------------------------------------------------
+(use-package gcmh
   :straight t)
 ;; ------------------------------------
 
@@ -132,6 +130,22 @@
 ;;; UI SETTINGS
 ;; ------------------------------------------------------------------------
 
+;; ------------------------------------
+;; Disable mouse-centric UI elements
+;; ---------------------------------
+;; Emacs has a bunch of unneccessary (for me) stuff
+;; in the UI by default. It's "mouse-centric" and
+;; takes up spece for no benefit to me.
+(scroll-bar-mode -1)
+(tool-bar-mode -1)
+(tooltip-mode -1)
+(menu-bar-mode -1)
+(set-fringe-mode -1)
+(setq use-dialog-box nil)
+(setq inhibit-startup-message t
+      initial-scratch-message "")
+;; ------------------------------------
+
 
 
 
@@ -147,19 +161,18 @@
 ;; ------------------------------------------------------------------------
 
 ;; ------------------------------------
-;; Disable mouse-centric UI elements
-;; ---------------------------------
-;; Emacs has a bunch of unneccessary (for me) stuff
-;; in the UI by default. It's "mouse-centric" and
-;; takes up spece for no benefit to me.
-(scroll-bar-mode -1)
-(tool-bar-mode -1)
-(tooltip-mode -1)
-(menu-bar-mode -1)
-(set-fringe-mode -1)
-(setq use-dialog-box nil)
-(setq inhibit-startup-message t
-      initial-scratch-message "")
+;; Scrolling
+;; ---------
+;; Why does Emacs scroll at the speed of light?
+(setq scroll-conservatively 100
+      mouse-wheel-scroll-amount '(2 ((shift) . 2))
+      mouse-wheel-progressive-speed nil
+      mouse-wheel-follow-mouse t
+      scroll-margin 0
+      auto-window-vscroll nil)
+
+;; PgUp / PgDown scroll to top/bottom line
+(setq scroll-error-top-bottom t)
 ;; ------------------------------------
 
 
