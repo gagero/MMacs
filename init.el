@@ -205,6 +205,16 @@
 (add-hook 'prog-mode-hook 'indent-guide-mode)
 ;; ------------------------------------
 
+;; -----------------------------------
+;; Selection
+;; ---------
+;; Overwrite selected text
+(delete-selection-mode t)
+
+;; Better sub-word selection
+(global-subword-mode 1)
+;; -----------------------------------
+
 
 
 
