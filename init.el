@@ -244,8 +244,19 @@
 ;; ------------------------------------
 
 ;; ------------------------------------
-;; Highlight numbers
+;; Highlight stuff
 ;; -----------------
+;; Highlight current line
+(when window-system (add-hook 'prog-mode-hook 'hl-line-mode))
+
+;; Highlight thing at point
+(use-package highlight-thing
+  :straight t
+  :config
+  (setq highlight-thing-delay-seconds 0.25))
+(global-highlight-thing-mode)
+
+;; Highlight numbers
 (use-package highlight-numbers
   :straight t)
 (add-hook 'prog-mode-hook 'highlight-numbers-mode)
