@@ -205,7 +205,14 @@
 (add-hook 'prog-mode-hook 'indent-guide-mode)
 ;; ------------------------------------
 
-;; -----------------------------------
+;; ------------------------------------
+;; Line & Column Numbers
+;; ---------------------
+(column-number-mode)
+(global-display-line-numbers-mode t)
+;; ------------------------------------
+
+;; ------------------------------------
 ;; Selection
 ;; ---------
 ;; Overwrite selected text
@@ -213,7 +220,7 @@
 
 ;; Better sub-word selection
 (global-subword-mode 1)
-;; -----------------------------------
+;; ------------------------------------
 
 
 
