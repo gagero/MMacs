@@ -269,8 +269,8 @@
 ;; ------------------------------------------------------------------------
 
 ;; ------------------------------------
-;; Minibuffer completion
-;; ---------------------
+;; Text completion
+;; ---------------
 ;; Vertico does minibuffer completion.
 ;; It's the counterpart for Corfu.
 (use-package vertico
@@ -280,50 +280,35 @@
         vertico-cycle t))
 (vertico-mode)
 
+;; Corfu does completion at point.
+;; It's the counterpart for Vertico.
+(use-package corfu
+  :straight (corfu :files (:defaults "extensions/*")
+                   :includes (corfu-info corfu-history))
+  :config
+  (setq corfu-auto t
+        corfu-auto-prefix 1
+        corfu-auto-delay 0
+        corfu-min-width 40
+        corfu-max-width corfu-min-width
+        corfu-count 8
+        corfu-scroll-margin 3
+        corfu-cycle nil
+        corfu-popupinfo-delay 0
+        corfu-quit-at-boundary t
+        corfu-separator ?\s
+        corfu-quit-no-match 'separator)
+  :init
+  (global-corfu-mode)
+  (corfu-popupinfo-mode)
+  (corfu-indexed-mode))
+
 ;; Orderless sorting is really nice.
 (use-package orderless
   :straight t
   :config (setq completion-styles '(orderless basic)
                 completion-category-defaults nil
                 completion-category-overrides '((file (styles partial-completion)))))
-;; ------------------------------------
-
-;; ------------------------------------
-;; Completion at point
-;; -------------------
-;; Corfu does completion at point.
-;; It's the counterpart for Vertico.
-(use-package corfu
-  :straight t
-  :custom
-  ;; Auto-completion
-  (corfu-auto t)
-  (corfu-auto-prefix 1)
-  (corfu-auto-delay 0)
-  ;; Corfu UI settings
-  (corfu-min-width 40)
-  (corfu-max-width corfu-min-width)
-  (corfu-count 8)
-  (corfu-scroll-margin 3)
-  (corfu-cycle nil)
-  ;; Separator
-  (corfu-quit-at-boundary nil)
-  (corfu-separator ?\s)
-  (corfu-quit-no-match 'separator)
-  ;; (corfu-preview-current 'insert)
-  ;; Misc.
-  (corfu-echo-documentation nil))
-(global-corfu-mode)
-
-;; Show documentation for candidate
-;; (use-package corfu-doc
-;;   :straight (corfu-doc :type git :host github :repo "galeo/corfu-doc")
-;;   :after corfu
-;;   :hook (corfu-mode . corfu-doc-mode)
-;;   :custom
-;;   (corfu-doc-delay 0.25)
-;;   (corfu-doc-max-width 80)
-;;   (corfu-doc-max-height 10))
 ;; ------------------------------------
 
 
