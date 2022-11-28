@@ -75,6 +75,15 @@
 ;; ------------------------------------
 
 ;; ------------------------------------
+;; Custom vars file
+;; ----------------
+;; Those custom variables get annoying after a while.
+;; Make them go away.
+(setq custom-file (concat user-emacs-directory "custom.el"))
+(load custom-file 'noerror)
+;; ------------------------------------
+
+;; ------------------------------------
 ;; AUTOMATIC UPDATES
 ;; -----------------
 (use-package auto-package-update
