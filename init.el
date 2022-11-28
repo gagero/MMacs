@@ -173,6 +173,11 @@
 
 ;; PgUp / PgDown scroll to top/bottom line
 (setq scroll-error-top-bottom t)
+
+;; Visual-only scroll bar
+(use-package yascroll
+  :straight t)
+(global-yascroll-bar-mode 1)
 ;; ------------------------------------
 
 ;; ------------------------------------
@@ -180,8 +185,8 @@
 ;; ----------
 ;; Show stray whitespace
 (setq-default show-trailing-whitespace t
-	      indicate-empty-lines t
-	      indicate-buffer-boundaries 'left)
+	            indicate-empty-lines t
+	            indicate-buffer-boundaries 'left)
 
 ;; Make files end with a newline
 (setq-default require-final-newline t)
