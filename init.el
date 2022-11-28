@@ -222,6 +222,17 @@
 (global-subword-mode 1)
 ;; ------------------------------------
 
+;; ------------------------------------
+;; Delimiters
+;; ----------
+;; Auto-close
+(electric-pair-mode 1)
+
+;; Highlight matching parentheses
+(setq show-paren-delay 0)
+(show-paren-mode 1)
+;; ------------------------------------
+
 
 
 
