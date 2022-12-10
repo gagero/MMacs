@@ -36,7 +36,10 @@
 ;; ------------------------------------
 ;; EMACS SERVER
 ;; ------------
-(server-start)
+;; In case user has a different server name, they can easily change it
+(defvar server-name)
+(require 'server)
+(unless (server-running-p server-name) (server-start))
 ;; ------------------------------------
 
 
@@ -328,7 +331,9 @@
       auto-save-default nil)
 
 ;; Disable lockfiles
-(setq create-lockfiles nil)
+;; Allows user to change lockfile creation permanently with less hassle
+(defvar enable-lockfiles nil "Controls the creation of lockfiles. Set to nil to disable lockfiles and to t to enable them.") 
+(setq create-lockfiles enable-lockfiles)
 
 ;; Emacs still wants to create the FILE~ backups,
 ;; so this will put them in their own folder.
