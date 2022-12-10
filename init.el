@@ -37,7 +37,6 @@
 ;; EMACS SERVER
 ;; ------------
 ;; In case user has a different server name, they can easily change it
-(defvar server-name "server")
 (require 'server)
 (unless (server-running-p server-name) (server-start))
 ;; ------------------------------------
